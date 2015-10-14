@@ -13,7 +13,6 @@ http.createServer(function (req, res) {
     console.log(myRe);
     console.log("query is ",urlObj.query["q"]);
     var jsonresult = [];
-    // Now look the query up in the file
     fs.readFile('cities.dat.txt', function (err, data) {
       if(err) throw err;
       cities = data.toString().split("\n");
