@@ -40,13 +40,13 @@ http.createServer(function (req, res) {
       res.end(data);
     });
   }
-}).listen(3080);
+}).listen(4000);
 
-console.log("Listening on port 3080");
+console.log("Listening on port 4000");
 
 
 var options = {
     hostname: 'localhost',
-    port: '3080',
+    port: '4000',
     path: 'news.html'
   };
