@@ -8,6 +8,21 @@ $(document).ready(function(){
         var myobj = {Name:$("#Name").val(),Comment:$("#Comment").val()};
         jobj = JSON.stringify(myobj);
         $("#json").text(jobj);
+        // First read the form data
+      var jsonData = "";
+      req.on('data', function (chunk) {
+        jsonData += chunk;
+      });
+      req.on('end', function () {
+        var reqObj = JSON.parse(jsonData);
+        console.log(reqObj);
+        console.log("Name: "+reqObj.Name);
+        console.log("Comment: "+reqObj.Comment);
+      });
+        var url = "comment";
+        $.post(url,jobj,function(data,textStatus) {
+          $("#done").append(textStatus);
+        });
     });
 });
 </script>
@@ -22,6 +37,7 @@ $(document).ready(function(){
 <button>Serialize form values</button>
 
 <div id="json"></div>
+<div id="done"></div>
 
 </body>
 </html>
