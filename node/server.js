@@ -30,7 +30,6 @@ http.createServer(function (req, res) {
         });
       });
     }
-  }
  else if(req.method === "GET") {
       console.log("In GET"); 
        var MongoClient = require('mongodb').MongoClient;
@@ -61,5 +60,6 @@ http.createServer(function (req, res) {
       res.writeHead(200);
       res.end(data);
     });
+  }
   }
 }).listen(4000);
