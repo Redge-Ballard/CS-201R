@@ -4,7 +4,7 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
 $(document).ready(function(){
-    $("button").click(function(){
+    $("button1").click(function(){
         var myobj = {Name:$("#Name").val(),Comment:$("#Comment").val()};
         jobj = JSON.stringify(myobj);
         $("#json").text(jobj);
@@ -46,7 +46,7 @@ $(document).ready(function(){
   comment: <input type="text" id="Comment" value="Hello"><br>
 </form>
 
-<button>Serialize form values</button>
+<button id="button1">Serialize form values</button>
 <button id="button2">Show values</button>
 
 <div id="json"></div>
