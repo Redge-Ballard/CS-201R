@@ -23,13 +23,35 @@ http.createServer(function (req, res) {
         MongoClient.connect("mongodb://localhost/weather", function(err, db) {
           if(err) throw err;
           db.collection('comments').insert(reqObj,function(err, records) {
-            console.log("Record added as "+records[0]._id);
+          console.log("Record added as "+records[0]._id);
+	  res.writeHead(200);
+          res.end("hmm");
           });
         });
       });
     }
-  } else {
+  }
+ else if(req.method === "GET") {
+      console.log("In GET"); 
+       var MongoClient = require('mongodb').MongoClient;
+      MongoClient.connect("mongodb://localhost/weather", function(err, db) {
+        if(err) throw err;
+        db.collection("comments", function(err, comments){
+          if(err) throw err;
+          comments.find(function(err, items){
+            items.toArray(function(err, itemArr){
+              console.log("Document Array: ");
+              console.log(itemArr);
+               res.writeHead(200);
+              res.end(JSON.stringify(itemArr));
+            });
+          });
+        });
+      });
+    }
+ else {
    // Normal static file
+    console.log("Normal.");
     fs.readFile(ROOT_DIR + urlObj.pathname, function (err,data) {
       if (err) {
         res.writeHead(404);

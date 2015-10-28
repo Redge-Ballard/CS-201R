@@ -24,6 +24,18 @@ $(document).ready(function(){
           $("#done").append(textStatus);
         });
     });
+    $("button2").click(function(){
+	var url = "comment";
+      $.getJSON(url,function(data) {
+        var everything;
+        everything = "<ul>";
+        $.each(data, function(i,item) {
+          everything += "<li> Name: "+data[i].Name+" Comment: "+data[i].Comment;
+        });
+        everything += "</ul>";
+        $("#currentComments").html(everything);
+      });
+   });
 });
 </script>
 </head>
@@ -35,9 +47,11 @@ $(document).ready(function(){
 </form>
 
 <button>Serialize form values</button>
+<button2>Show values<button2>
 
 <div id="json"></div>
 <div id="done"></div>
+<div id="everything"></div>
 
 </body>
 </html>
