@@ -10,7 +10,7 @@ $(document).ready(function(){
         $("#json").text(jobj);
         var url = "comment";
         $.post(url,jobj,function(data,textStatus) {
-          $("#done").append(textStatus);
+          $("#done").html(textStatus);
         });
       var jsonData = "";
       req.on('data', function (chunk) {
