@@ -1,0 +1,17 @@
+body {
+	overflow: hidden;
+	background: black;
+	height: vh100;
+}
+
+.inputs {
+	color: white;
+}
+
+.inputs input {
+	color: black;
+}
+
+.inputs button {
+	color: black;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body style="background: black;">
+
+<div class="inputs">
+	Word:  <input id="input1"></input> 
+<button onclick="applySeedBG()">Background</button> 
+<button onclick="applySeedMove()">Movement</button> 
+<button onclick="applySeedColor()">Color</button> 
+<button onclick="applySeedView()">View</button>
+<button onclick="applySeedView(); applySeedBG(); applySeedColor(); applySeedMove()">All</button>
+<button onclick="resetAll()">Reset</button>
+</div>
+<canvas id="c"></canvas>
+
+<script type="text/javascript" src="amaze.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.2/seedrandom.js"></script>
+
+</body>
+</html>
